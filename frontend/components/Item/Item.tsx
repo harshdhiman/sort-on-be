@@ -25,7 +25,8 @@ export default function Item(props: ItemProps) {
       props.onTextChange?.(value);
     }, 500);
     return () => clearTimeout(timeoutId);
-  }, [value, 500]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   // Draggable Data
   const { attributes, listeners, setNodeRef, transform, transition } =
